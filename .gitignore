@@ -1,0 +1,33 @@
+# Compiled object files
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Arduino build folders
+build/
+
+# Arduino sketchbook folders
+*.sketch
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
