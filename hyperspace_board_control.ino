@@ -4,8 +4,10 @@ const uint8_t HYPERSPACE_READY_PIN = 4;
 const uint8_t HYPERSPACE_OVERHEATED = 5;
 const uint8_t LAUNCH_PIN = 2;
 
-const uint16_t HYPERSPACE_LOADING_TIME = 5000;                 // 5 seconds
+const uint16_t HYPERSPACE_LOADING_TIME = 1000;                 // 5 seconds
 const uint16_t HYPERSPACE_MAX_USING_BEFORE_OVERHEATED = 20000; // 5 seconds
+
+uint8_t lastLaunchButtonState;
 
 #pragma region states
 
@@ -79,6 +81,7 @@ void spaceship_setup()
     check_module(HYPERSPACE_PIN);
     check_module(HYPERSPACE_READY_PIN);
     check_module(HYPERSPACE_OVERHEATED);
+    lastLaunchButtonState = launchButtonPressed();
     loadHyperspace();
 }
 
@@ -94,18 +97,19 @@ void spaceship_loop()
 
     hyperspaceMonitoring();
 
-    if (launchButtonPressed())
+    if (launchButtonPressed() != lastLaunchButtonState && launchButtonPressed())
     {
         if (hyperspaceReady() && !isHyperspace())
         {
             startHyperspace();
-            delay(1000);
         }
         else if (isHyperspace())
         {
             stopHyperspace();
         }
     }
+
+    lastLaunchButtonState = launchButtonPressed();
 }
 
 void hyperspaceMonitoring()

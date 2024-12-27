@@ -2,5 +2,6 @@
     "editor.formatOnSave": true,
     "files.associations": {
         "spaceship_commands.h": "c"
-    }
+    },
+    "workbench.colorTheme": "Arduino Dark"
 }
