@@ -1,5 +1,5 @@
 {
-    "sketch": "blink.ino",
+    "sketch": "hyperspace_board_control.ino",
     "output": "build",
     "board": "arduino:avr:uno",
     "port": "COM3",
