@@ -10,10 +10,12 @@ This project is an example of how to blink an LED using an Arduino. It is a simp
 # v1.01
     - activation ou désactivation sur front montant pour supprimer le besoin d'un délai
 
-# en-cours
+# v1.01
     - capteur de température
     - désactivation automatique de l'hyperspace en case de surchauffe
-
+    - système d'alerte et de safe mode
+# en-cours
+    - possibility to enter in hyperspace by passing safe mode
 ## Requirements
 
 - Arduino board (e.g., Uno, Mega, Nano)
